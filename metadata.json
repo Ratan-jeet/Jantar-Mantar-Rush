@@ -1,0 +1,6 @@
+{
+  "name": "Jantar Mantar Rush: Civic Runner",
+  "description": "An endless 3D runner through Delhi's historic Jantar Mantar and Connaught Place. Dodge police barricades and security cordons while collecting exam papers, votes, and the Constitution to champion civic awareness and transparency.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

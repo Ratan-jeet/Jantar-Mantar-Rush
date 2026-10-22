@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "LeaderboardEntry": {
+      "title": "LeaderboardEntry",
+      "description": "A high score record submitted by a runner to the global civic leaderboard.",
+      "type": "object",
+      "properties": {
+        "playerName": {
+          "type": "string",
+          "description": "The display name of the player or citizen runner.",
+          "minLength": 2,
+          "maxLength": 32
+        },
+        "score": {
+          "type": "integer",
+          "description": "The final run score achieved by the player."
+        },
+        "distance": {
+          "type": "integer",
+          "description": "The distance run in meters past landmarks."
+        },
+        "examPapers": {
+          "type": "integer",
+          "description": "Number of exam papers collected."
+        },
+        "constitutions": {
+          "type": "integer",
+          "description": "Number of Constitution books collected."
+        },
+        "votes": {
+          "type": "integer",
+          "description": "Number of democratic votes collected."
+        },
+        "characterName": {
+          "type": "string",
+          "description": "Character used for the run (e.g. Sonam Wangchuk, Abhijeet Dipake, Priya, etc.).",
+          "maxLength": 48
+        },
+        "civicRank": {
+          "type": "string",
+          "description": "The awarded civic awareness title based on performance.",
+          "maxLength": 48
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp when the score was recorded."
+        }
+      },
+      "required": ["playerName", "score", "distance", "examPapers", "constitutions", "votes", "characterName", "civicRank", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/leaderboard/{entryId}": {
+      "schema": {
+        "$ref": "#/entities/LeaderboardEntry"
+      },
+      "description": "Collection of global civic runner high scores ordered by score descending."
+    }
+  }
+}
